@@ -3,35 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive News Webpage</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>News App</title>
+    <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
+    
+    <!-- navigation bar starts here -->
+    <nav>
+        <div class="main-nav container flex">
+            <!-- logo here -->
+            <a href="#" onclick="reload()" class="company-logo">
+                <img src="logo.jpg" alt="company logo">
+            </a>
 
-    <!-- Header -->
-    <header>
-        <h1>Daily News</h1>
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#world">World</a>
-            <a href="#technology">Technology</a>
-            <a href="#sports">Sports</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+            <!-- Category links here -->
+            <div class="nav-links">
+               <ul class="flex">
+                <li class="hover-link nav-item" id="ipl" onclick="onNavItemClick('ipl')">IPL</li>
+                <li class="hover-link nav-item" id="finance" onclick="onNavItemClick('finance')">Finance</li>
+                <li class="hover-link nav-item" id="politics" onclick="onNavItemClick('politics')">Politics</li>
+               </ul>
+            </div>
 
-    <!-- Main Content -->
-    <div class="container">
-        <h2>Latest News</h2>
-        <div id="news-container">
-            <!-- News articles will be dynamically inserted here by JavaScript -->
+            <!-- search bar here -->
+            <div class="search-bar flex">
+                <input type="text" class="news-input" id="news-input" placeholder="e.g. Science">
+                <button class="search-button" id="search-button">Search</button>
+            </div>
+        </div> 
+
+    </nav>
+    <!-- navigation bar ends here -->
+
+
+    <!-- main content starts here -->
+    <main>
+        <div class="card-container container flex" id="card-container">
+           
         </div>
-    </div>
+             
+    </main>
+    <!-- main content ends here -->
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Daily News | <a href="#privacy">Privacy Policy</a></p>
-    </footer>
+    <template id="template-news-card">
+        <div class="card">
+            <div class="card-header">
+                <img src="https://via.placeholder.com/400x200" alt="news image" id="news-img">
+            </div>
+
+            <div class="card-content">
+                <h3 id="news-title">This is the title</h3>
+                <h4 class="news-source" id="news-source">Food Gadget 09/07/2023</h4>
+                <p class="news-desc" id="news-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet, perferendis dolorum distinctio harum voluptatibus sit cupiditate sequi ad quia atque autem beatae illo ea?</p>
+            </div>
+        </div>
+    </template>
+
 
     <script src="script.js"></script>
 </body>
